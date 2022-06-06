@@ -17,5 +17,17 @@ class Student(Person):
             reader = csv.DictReader(csvfile)
             for row in reader:
                 students.append(Student(**dict(row)))
+                # print(row)
         return students
+        # print(list(students))
 
+    def __str__(self):
+        return f"""{self.name.upper()}
+---------------
+age : {self.age}
+id : {self.school_id}
+        """
+        # return f"{self.name.upper()}\n--------------- \nage : {self.age}\nid : {self.school_id}"  //another way to get the same result as the one above
+
+# Student.objects()
+# print(Student("Lisa", 25, "Student", "13345" , "xx"))
